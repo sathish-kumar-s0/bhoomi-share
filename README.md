@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏡 Bhoomi Share – Land Sharing Platform
 
-## Getting Started
+## 🚀 Live Demo
 
-First, run the development server:
+https://bhoomi-share.netlify.app
+
+---
+
+## 📌 Overview
+
+Bhoomi Share is a full-stack web application that allows users to list, manage, and explore land/property listings. Built with a modern stack focusing on performance, scalability, and clean UI.
+
+---
+
+## 🛠 Tech Stack
+
+**Frontend:** React.js, JavaScript, CSS, Bootstrap
+**Backend:** Supabase (PostgreSQL, Auth)
+**Deployment:** Netlify
+**Services:** Supabase Auth, REST APIs
+
+---
+
+## ✨ Features
+
+* 🔐 User Authentication (Login/Register using Supabase)
+* 🏡 Add, edit, and delete property listings (CRUD)
+* 📱 Fully responsive design (mobile + desktop)
+* ⚡ Fast loading with optimized UI components
+* 🔎 Property browsing and listing management
+
+---
+
+## 🧠 Architecture
+
+* React handles UI and state management
+* Supabase provides authentication + database
+* Netlify handles frontend deployment and CI/CD
+
+---
+
+## ⚙️ Environment Setup
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+VITE_SUPABASE_URL=your_url
+VITE_SUPABASE_ANON_KEY=your_key
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ▶️ Run Locally
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+git clone https://github.com/sathish-kumar-s0/bhoomi-share.git
+cd bhoomi-share
+npm install
+npm run dev
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📸 Screenshots
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+(Add screenshots here)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📈 Future Improvements
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Image upload using Supabase Storage
+* Advanced search & filters
+* Admin dashboard
+* Role-based access control
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 👨‍💻 Author
+
+Sathish Kumar
+GitHub: https://github.com/sathish-kumar-s0
