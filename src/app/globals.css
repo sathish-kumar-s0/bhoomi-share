@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+    /* Bhoomi Share Pro Aesthetic: Matte Obsidian & Luminous Copper (Earth Tone) */
+    --color-brand-primary: #18181B; /* Obsidian / Zync 900 */
+    --color-brand-secondary: #09090B; /* True Black / Zync 950 */
+    --color-brand-accent: #E05A3D; /* Luminous Copper / Terracotta */
+    --color-brand-accent-hover: #C44A30; 
+
+    /* Legacy mapping for safety */
+    --color-brand-teal: #18181B;
+    --color-brand-teal-light: #27272A; 
+    --color-brand-teal-dark: #09090B;
+    
+    --color-brand-gold: #D97706; /* Maintain deep gold for trust icons */
+    --color-brand-gold-light: #FBBF24; 
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+
+    /* Professional Background Shadows & Glows */
+    --shadow-premium: 0 25px 60px -15px rgba(0, 0, 0, 0.18);
+    --shadow-premium-hover: 0 50px 100px -20px rgba(0, 0, 0, 0.3);
+    --shadow-accent-glow: 0 0 50px rgba(224, 90, 61, 0.2);
+}
+
+:root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 4%; /* Near black */
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 4%;
+
+    --primary: 240 6% 10%; /* Obsidian */
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 5% 96%; /* Light gray */
+    --secondary-foreground: 240 6% 10%;
+
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
+
+    --accent: 14 74% 55%; /* Copper */
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 14 74% 55%;
+
+    --radius: 1rem; 
+}
+
+body {
+    background-color: #FAFAFA;
+    /* Soft warm copper/gray radials instead of green */
+    background-image: radial-gradient(at 0% 0%, rgb(164, 207, 213) 0, transparent 50%), radial-gradient(at 100% 100%, hsla(240,10%,97%,1) 0, transparent 50%);
+    background-attachment: fixed;
+    font-family: var(--font-body);
+    color: var(--color-brand-primary);
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+    color: #064E3B;
+    font-weight: 700;
+}
+
+/* Premium Pro UI Cards */
+.corporate-card {
+    @apply bg-white border border-slate-100 shadow-[0_4px_20px_rgba(6,78,59,0.05)] rounded-[20px] hover:shadow-[0_12px_30px_rgba(6,78,59,0.08)] hover:-translate-y-1 transition-all duration-500;
+}
+
+/* True Glassmorphism Card for Immersive Design */
+.glass-card {
+    @apply bg-white/70 backdrop-blur-xl border border-white/80 shadow-[0_8px_32px_rgba(6,78,59,0.06)] rounded-[24px] hover:shadow-[0_12px_40px_rgba(6,78,59,0.12)] hover:bg-white/80 hover:-translate-y-1 transition-all duration-500 relative overflow-hidden;
+}
+
+/* Glass effect for headers / top nav */
+.glass-header {
+    @apply bg-white/70 backdrop-blur-xl border-b border-white/50 shadow-[0_4px_30px_rgba(0,0,0,0.03)];
+}
+
+/* Add an internal subtle glow to glass cards */
+.glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.8), transparent);
+    transform: skewX(-20deg);
+    transition: 0.7s;
+}
+
+.glass-card:hover::before {
+    left: 150%;
+}

@@ -1,0 +1,33 @@
+const fs = require('fs');
+const path = require('path');
+
+function walk(dir) {
+    let results = [];
+    const list = fs.readdirSync(dir);
+    list.forEach(file => {
+        file = path.join(dir, file);
+        const stat = fs.statSync(file);
+        if (stat && stat.isDirectory()) {
+            results = results.concat(walk(file));
+        } else if (file.endsWith('.tsx') || file.endsWith('.ts')) {
+            results.push(file);
+        }
+    });
+    return results;
+}
+
+const files = walk('d:/work/real-estate/src');
+files.forEach(file => {
+    let content = fs.readFileSync(file, 'utf8');
+    let newContent = content
+        .replace(/\[#10B981\]/g, 'brand-accent')
+        .replace(/\[#064E3B\]/g, 'brand-primary')
+        .replace(/\[#0F172A\]/g, 'brand-primary')
+        .replace(/\[#22C55E\]/g, 'brand-accent')
+        .replace(/\[#020617\]/g, 'brand-primary'); 
+    
+    if (content !== newContent) {
+        fs.writeFileSync(file, newContent, 'utf8');
+        console.log('Updated', file);
+    }
+});
